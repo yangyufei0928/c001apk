@@ -70,7 +70,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.core.ktx)
     implementation(libs.okhttp)
-    implementation("com.github.Panpf.sketch:sketch-gif:4.2.0")
+    implementation("com.github.Panpf.sketch:sketch-gif:2.7.0")
     implementation(libs.androidx.exifinterface)
     implementation(project(":mojito"))
 }
