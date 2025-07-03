@@ -31,6 +31,13 @@ fun Project.setupLibraryModule(block: LibraryExtension.() -> Unit = {}) {
     }
 }
 
+android {
+    defaultConfig {
+        buildConfigField "String", "VERSION_NAME", "\"1.0.0\""
+        buildConfigField "int", "VERSION_CODE", "1"
+    }
+}
+
 fun Project.setupAppModule(block: BaseAppModuleExtension.() -> Unit = {}) {
     setupBaseModule<BaseAppModuleExtension> {
         defaultConfig {
