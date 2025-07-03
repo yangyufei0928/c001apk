@@ -32,9 +32,18 @@ fun Project.setupLibraryModule(block: LibraryExtension.() -> Unit = {}) {
 }
 
 android {
+    compileSdkVersion(34)
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
-        buildConfigField "String", "VERSION_NAME", "\"1.0.0\""
-        buildConfigField "int", "VERSION_CODE", "1"
+        minSdk = 16
+        targetSdk = 34
+
+        buildConfigField("String", "VERSION_NAME", "\"1.0.0\"")
+        buildConfigField("int",    "VERSION_CODE", "1")
     }
 }
 
