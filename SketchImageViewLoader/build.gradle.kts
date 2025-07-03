@@ -45,6 +45,10 @@ android {
         buildConfigField("String", "VERSION_NAME", "\"1.0.0\"")
         buildConfigField("int",    "VERSION_CODE", "1")
     }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 }
 
 fun Project.setupAppModule(block: BaseAppModuleExtension.() -> Unit = {}) {
