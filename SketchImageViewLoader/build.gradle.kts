@@ -18,12 +18,8 @@ setupLibraryModule {
         minSdk = 16
     }
 }
-
 fun Project.setupLibraryModule(block: LibraryExtension.() -> Unit = {}) {
     setupBaseModule<LibraryExtension> {
-        libraryVariants.all {
-            generateBuildConfigProvider?.configure { enabled = false }
-        }
         testOptions {
             unitTests.isIncludeAndroidResources = true
         }
@@ -31,17 +27,16 @@ fun Project.setupLibraryModule(block: LibraryExtension.() -> Unit = {}) {
     }
 }
 
+
 android {
     compileSdkVersion(34)
 
     buildFeatures {
         buildConfig = true
     }
-
     defaultConfig {
         minSdk = 16
         targetSdk = 34
-
         buildConfigField("String", "VERSION_NAME", "\"1.0.0\"")
         buildConfigField("int",    "VERSION_CODE", "1")
     }
@@ -50,6 +45,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
 
 fun Project.setupAppModule(block: BaseAppModuleExtension.() -> Unit = {}) {
     setupBaseModule<BaseAppModuleExtension> {
